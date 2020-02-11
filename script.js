@@ -25,4 +25,17 @@ function createGrid(x){
     
 }
 
-createGrid(16)
+function changeBackgroundColor() {
+    this.style.backgroundColor = 'black';
+};
+
+
+
+createGrid(16);
+
+// check for a mouseover event and change the background color when you get it
+let tileArray = document.getElementsByClassName("square");
+
+for (i = 0; i < tileArray.length; i++) {
+    tileArray[i].addEventListener('mouseover', changeBackgroundColor);
+}
