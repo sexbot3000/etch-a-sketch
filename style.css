@@ -3,10 +3,22 @@
     height: 720px;
     border: solid;
     border-width: 3px;
+    margin: auto;
 }
 
 .square {
     outline-style: solid;
     outline-width: 1px;
     float: left;
+}
+
+button {
+    position: relative;
+    left: 45%;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
 }
