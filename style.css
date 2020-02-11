@@ -1,18 +1,16 @@
 #container {
-    width: 960px;
-    height: 960px;
+    width: 720px;
+    height: 720px;
     border: solid;
-    border-width: 1px;
+    border-width: 3px;
 }
 
-.rowSquare {
+.square {
     outline-style: solid;
     outline-width: 1px;
-    width: 60px;
-    height: 60px;
     float: left;
 }
 
-.rowSquare:hover {
+.square:hover {
     background-color: black;
 }
