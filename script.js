@@ -1,3 +1,4 @@
+// functions for building the grid
 function createGrid(x){
     const container = document.querySelector('#container');
     height = container.clientHeight;
@@ -13,17 +14,14 @@ function createGrid(x){
     }
 }
 
-function isMousingOver(){
-    let tileArray = document.getElementsByClassName("square");
-    for (i = 0; i < tileArray.length; i++) {
-        tileArray[i].addEventListener('mouseover', changeBackgroundColor);
+function clearGrid() {
+    container = document.querySelector('#container');
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
     }
-};
+}
 
-function changeBackgroundColor() {
-    this.style.backgroundColor = 'black';
-};
-
+// functions for listening for button clicks
 function resetListener(){
     document.getElementById("reset").addEventListener("click", function(){
         dimension = prompt('What dimensions would you like your new grid to be? (maximum 100)')
@@ -40,17 +38,19 @@ function resetListener(){
     });
 }
 
-function clearGrid() {
-    container = document.querySelector('#container');
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
+function randomColorListener() {
+    document.getElementById('randomColor').addEventListener('click', function(){
+        mouseOverRandom();
+    })
 }
 
-function randomColor() {
-    let rgb = 'rgb(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255);
-    this.style.backgroundColor = rgb
-}
+// functions for mousing over
+function isMousingOver(){
+    let tileArray = document.getElementsByClassName("square");
+    for (i = 0; i < tileArray.length; i++) {
+        tileArray[i].addEventListener('mouseover', changeBackgroundColor);
+    }
+};
 
 function mouseOverRandom() {
     let tileArray = document.getElementsByClassName("square");
@@ -59,11 +59,16 @@ function mouseOverRandom() {
     }
 }
 
-function randomColorListener() {
-    document.getElementById('randomColor').addEventListener('click', function(){
-        mouseOverRandom();
-    })
+// functions for changing color of etch-a-sketch
+function changeBackgroundColor() {
+    this.style.backgroundColor = 'black';
+};
+
+function randomColor() {
+    let rgb = 'rgb(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255);
+    this.style.backgroundColor = rgb
 }
+
 
 createGrid(16);
 isMousingOver();
