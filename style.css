@@ -1,9 +1,15 @@
+h1 {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
 #container {
     width: 720px;
     height: 720px;
     border: solid;
     border-width: 3px;
     margin: auto;
+    margin-top: -50px;
 }
 
 .square {
@@ -12,9 +18,21 @@
     float: left;
 }
 
-button {
+#reset {
     position: relative;
-    left: 45%;
+    left: 200px;
+    top: 150px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    border-radius: 25px;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
+
+#randomColor {
+    position: relative;
+    top: 350px;
     margin-bottom: 50px;
     margin-top: 10px;
     border-radius: 25px;

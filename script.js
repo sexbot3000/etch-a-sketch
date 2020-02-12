@@ -1,11 +1,9 @@
-// create a grid with x dimension
 function createGrid(x){
     const container = document.querySelector('#container');
     height = container.clientHeight;
     width = container.clientWidth;
     for (i = 0; i < x; i++) {        
         for (j = 0; j < x; j++) {
-            // create each square and set width & height
             const square = document.createElement('div');
             square.classList.add('square');
             square.style.height = (height / x).toString() + 'px'
@@ -15,7 +13,6 @@ function createGrid(x){
     }
 }
 
-// check for a mouseover event and change the background color when you get it
 function isMousingOver(){
     let tileArray = document.getElementsByClassName("square");
     for (i = 0; i < tileArray.length; i++) {
@@ -50,6 +47,25 @@ function clearGrid() {
     }
 }
 
+function randomColor() {
+    let rgb = 'rgb(' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255) + ', ' + Math.floor(Math.random()*255);
+    this.style.backgroundColor = rgb
+}
+
+function mouseOverRandom() {
+    let tileArray = document.getElementsByClassName("square");
+    for (i = 0; i < tileArray.length; i++){
+        tileArray[i].addEventListener('mouseover', randomColor);
+    }
+}
+
+function randomColorListener() {
+    document.getElementById('randomColor').addEventListener('click', function(){
+        mouseOverRandom();
+    })
+}
+
 createGrid(16);
 isMousingOver();
 resetListener();
+randomColorListener();
