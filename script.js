@@ -29,10 +29,17 @@ function changeBackgroundColor() {
 
 function resetListener(){
     document.getElementById("reset").addEventListener("click", function(){
-        dimension = prompt('What dimensions would you like your new grid to be?')
-        clearGrid();
-        createGrid(dimension);
-        isMousingOver();
+        dimension = prompt('What dimensions would you like your new grid to be? (maximum 100)')
+        dimension = Number(dimension)
+        if ((!Number.isInteger(dimension) || dimension < 0) || dimension > 100){
+            alert('Please enter a number between 1 and 100');
+        } else if (dimension === '' || dimension === null){
+            alert('Cancelled');
+        } else {
+            clearGrid();
+            createGrid(dimension);
+            isMousingOver();
+        }
     });
 }
 
